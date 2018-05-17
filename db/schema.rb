@@ -17,6 +17,8 @@ ActiveRecord::Schema.define(version: 20180516145626) do
 
   create_table "cocktails", force: :cascade do |t|
     t.string "name"
+    t.text "description"
+    t.string "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -33,6 +35,8 @@ ActiveRecord::Schema.define(version: 20180516145626) do
 
   create_table "ingredients", force: :cascade do |t|
     t.string "name"
+    t.string "description"
+    t.string "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

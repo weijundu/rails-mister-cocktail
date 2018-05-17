@@ -1,0 +1,26 @@
+<div class="show-wrapper" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.2) 0%, rgba(0,36,61,0.2) 50%), url(<%=@cocktail.url%>)">
+  <h1><%= @cocktail.name %></h1>
+</div>
+<div class="content">
+  <div class="left">
+    <h3>Description</h3>
+    <p><%= @cocktail.description %></p><br>
+    <%= link_to "Edit cocktail", edit_cocktail_path(@cocktail), class: "btn btn-primary" %>
+  </div>
+  <div class="right">
+    <h3>Ingredients</h3>
+    <ul>
+      <% @cocktail.doses.each do |dose| %>
+      <li><p><strong><%= @ingredients.find(dose.ingredient_id).name %></strong>&ensp;-&ensp;<%= dose.description %>&ensp;(<%= link_to "delete", cocktail_dose_path(@cocktail, dose), method: :delete %>)</p>
+      </li>
+      <% end %>
+    </ul><br>
+    <%= link_to "Add a ingredient", new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %>
+  </div>
+</div>
+
+
+
+
+
+

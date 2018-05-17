@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <br><br><br>
+        <%= simple_form_for [@cocktail, @dose] do |t| %>
+        <%= t.association :ingredient, collection: Ingredient.order('name'), class: "form-control js-basic-single" %>
+        <%= t.input :description, class: "form-control" %>
+        <%= t.submit class: "btn btn-primary" %>
+        <% end %>
+    </div>
+  </div>
+</div>
+

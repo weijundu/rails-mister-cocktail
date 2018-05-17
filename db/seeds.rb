@@ -10,4 +10,3 @@ require "json"
 
 ingredients = JSON.parse(open("https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list").read)
 ingredients["drinks"].each { |i| Ingredient.create!(name: i["strIngredient1"])}
-

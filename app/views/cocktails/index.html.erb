@@ -1,0 +1,24 @@
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://gq-images.condecdn.net/image/PRMLDAZqMAE/crop/1620/f/non-alcoholic-cocktails-GQ-23Jan18_istock_b.jpg');">
+  <div class="banner-content">
+    <h1>Simple Cocktails</h1><br>
+    <p>
+      <span id="banner-typed-text"></span>
+    </p>
+  </div>
+</div>
+<div class="wrpper">
+  <div class="container">
+  <h1>List of cocktails</h1>
+    <div class="row">
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-xs-12 col-md-4">
+        <%= link_to cocktail_path(cocktail) do  %>
+        <div class="image" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.2) 0%, rgba(0,36,61,0.2) 50%), url(<%=cocktail.url%>)" >
+          <h3><%=cocktail.name%></h3>
+        </div>
+        <% end %>
+      </div>
+    <% end %>
+    </div>
+  </div>
+ </div>
