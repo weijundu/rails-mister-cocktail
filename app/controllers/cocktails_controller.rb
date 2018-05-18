@@ -23,7 +23,7 @@ class CocktailsController < ApplicationController
 
   def update
     @cocktail.update(cocktail_params)
-    redirect_to cocktails_path
+    redirect_to root_path
   end
 
   def show
