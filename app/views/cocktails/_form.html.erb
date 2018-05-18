@@ -5,7 +5,8 @@
       <%= simple_form_for @cocktail do |f| %>
         <%= f.input :name, class: "form-control"%>
         <%= f.input :description, class: "form-control"%>
-        <%= f.input :url, class: "form-control"%>
+        <%= f.input :photo, class: "form-control"%>
+        <%= f.input :photo_cache, as: :hidden %>
         <%= f.submit class: "btn btn-primary" %>
       <% end %>
     </div>
